@@ -34,14 +34,15 @@ int main (void)
    return 0;
 } ]]
 
+local ffi = require 'ffi'
 local poisson = require 'gsl-poisson'
 local n = 10
 local mu = 3
-gsl_rng_env_setup()
-local T = gsl_rng_default
-local r = ffi.gc(gsl_rng_alloc(T), gsl_rng_free)
+poisson.gsl_rng_env_setup()
+local T = poisson.gsl_rng_default
+local r = ffi.gc(poisson.gsl_rng_alloc(T), poisson.gsl_rng_free)
 
 for i=1,n do
-   local k = gsl_ran_poisson(r, mu)
+   local k = poisson.gsl_ran_poisson(r, mu)
    print(k)
 end

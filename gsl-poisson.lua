@@ -1,7 +1,7 @@
 local ffi = require 'ffi'
 
 ffi.cdf[[
-typedef extern GSL_VAR; /* Had to replace define by typedef */
+typedef extern GSL_VAR; /* Had to replace define by typedef */t 
 
    typedef struct
      {
@@ -23,7 +23,7 @@ typedef extern GSL_VAR; /* Had to replace define by typedef */
    gsl_rng;
 
    const gsl_rng_type * gsl_rng_env_setup (void);
-   GSL_VAR const gsl_rng_type *gsl_rng_default;
+   const gsl_rng_type *gsl_rng_default;
    gsl_rng *gsl_rng_alloc (const gsl_rng_type * T);
    void gsl_rng_free (gsl_rng * r);
    unsigned int gsl_ran_poisson (const gsl_rng * r, double mu);
