@@ -1,7 +1,6 @@
 local ffi = require 'ffi'
 
-ffi.cdf[[
-typedef extern GSL_VAR; /* Had to replace define by typedef */t 
+ffi.cdef[[
 
    typedef struct
      {
